@@ -8,11 +8,9 @@
     </head>
     <body >
     <div id="app">
-
-        <router-link to="/login">صفحه لاگین</router-link>
-        <router-link to="/register">صفحه رجیستر</router-link>
-
-        <router-view></router-view>
+        <v-app>
+            <router-view></router-view>
+        </v-app>
     </div>
     <script src="{{asset('js/app.js')}}"></script>
     </body>

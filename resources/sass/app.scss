@@ -1,7 +1,21 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "~@mdi/font/css/materialdesignicons.min.css";
 
 // Variables
 @import 'variables';
 
+//vuetify
 @import '~vuetify/dist/vuetify.min.css';
+
+body .v-application{
+    font-family: Estedad !important;
+    .body-1{
+        font-family: Estedad !important;
+        font-weight: 400;
+        letter-spacing: 0!important;
+    }
+}
+.v-btn{
+    letter-spacing: 0!important;
+}
