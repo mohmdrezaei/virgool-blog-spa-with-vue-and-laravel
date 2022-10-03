@@ -1,8 +1,8 @@
 
 window.Vue = require('vue').default;
 
-import  vuetify  from "./components/plugin/vuetify"
-import router from "./components/router/router";
+import  vuetify  from "./plugin/vuetify"
+import router from "./router/router";
 
 
 const app = new Vue({
