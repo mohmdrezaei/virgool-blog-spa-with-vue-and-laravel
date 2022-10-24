@@ -1,7 +1,4 @@
 <template>
-    <div>
-        <front-navbar @show-nav="drawer =true"></front-navbar>
-        <front-navigation-drawer :drawer="drawer"></front-navigation-drawer>
 
         <v-content>
             <v-container>
@@ -23,12 +20,10 @@
                 </v-row>
             </v-container>
         </v-content>
-    </div>
 </template>
 
 <script>
-import FrontNavbar from "@/components/FrontNavbar";
-import FrontNavigationDrawer from "@/components/FrontNavigationDrawer";
+
 import RelatedPost from "@/components/posts/RelatedPost";
 import NewPost from "@/components/posts/NewPost";
 import PopularPosts from "@/components/posts/PopularPosts";
@@ -39,8 +34,7 @@ export default {
         PopularPosts,
         NewPost,
         RelatedPost,
-        FrontNavbar,
-        FrontNavigationDrawer
+        
     },
 
     data() {
