@@ -1,5 +1,6 @@
 <template>
 
+
         <v-content>
             <v-container>
                 <v-row>
@@ -23,7 +24,6 @@
 </template>
 
 <script>
-
 import RelatedPost from "@/components/posts/RelatedPost";
 import NewPost from "@/components/posts/NewPost";
 import PopularPosts from "@/components/posts/PopularPosts";
@@ -34,7 +34,6 @@ export default {
         PopularPosts,
         NewPost,
         RelatedPost,
-        
     },
 
     data() {

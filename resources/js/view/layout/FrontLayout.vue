@@ -2,7 +2,9 @@
     <div>
         <front-navbar @show-nav="drawer =true"></front-navbar>
         <front-navigation-drawer :drawer="drawer"></front-navigation-drawer>
+        <router-view></router-view>
     </div>
+
 </template>
 
 <script>
