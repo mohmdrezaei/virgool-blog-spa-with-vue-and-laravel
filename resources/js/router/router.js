@@ -5,6 +5,9 @@ import register from "../view/auth/register";
 import Home from "../view/Home";
 import FrontLayout from "../view/layout/FrontLayout";
 import PostShow from "../view/Post/PostShow";
+import MyPosts from "../view/Post/MyPosts";
+import AdminLayout from "../view/layout/AdminLayout";
+import Dashboard from "../view/admin/Dashboard";
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -25,7 +28,23 @@ export default new VueRouter({
                         component: PostShow,
                         name: "post-show"
                     },
+                    {
+                        path: 'posts/draft',
+                        component: MyPosts,
+                        name: "my-posts"
+                    },
                 ]
+        },
+        {
+            path: '/admin',
+            component:AdminLayout,
+            children:[
+                {
+                    path: 'dashboard',
+                    component: Dashboard,
+                    name: 'admin-dashboard'
+                }
+            ]
         },
 
         {
@@ -37,7 +56,8 @@ export default new VueRouter({
             path: "/register",
             component: register,
             name: "register"
-        }
+        },
+
     ]
 
 

@@ -131,6 +131,7 @@ export default {
 
 <style scoped>
 .body-text {
+    text-align: justify;
     line-height: 2.5rem;
 }
 </style>
