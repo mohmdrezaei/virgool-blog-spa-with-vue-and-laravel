@@ -8,6 +8,8 @@ import PostShow from "../view/Post/PostShow";
 import MyPosts from "../view/Post/MyPosts";
 import AdminLayout from "../view/layout/AdminLayout";
 import Dashboard from "../view/admin/Dashboard";
+import NotFound from "../components/Error/NotFound";
+import AccessDenied from "../components/Error/AccessDenied";
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -56,6 +58,21 @@ export default new VueRouter({
             path: "/register",
             component: register,
             name: "register"
+        },
+        {
+            path: '/404',
+            component: NotFound ,
+            name: "not-found"
+        },
+        {
+            path: '*',
+            component: NotFound ,
+            name: "not-found"
+        },
+        {
+            path: '/403',
+            component: AccessDenied ,
+            name: "access-denied"
         },
 
     ]
