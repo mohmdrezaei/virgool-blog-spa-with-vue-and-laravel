@@ -1732,9 +1732,9 @@ var render = function render() {
     }, [_c("span", {
       staticClass: "body-2"
     }, [_vm._v("آخرین ویرایش : 2 دقیقه پیش (3 کلمه)")]), _vm._v(" "), _c("v-spacer"), _vm._v(" "), _c("v-icon", {
-      staticClass: "info--text ml-4"
+      staticClass: "info--text ml-4 text--lighten-1"
     }, [_vm._v("mdi-file-document-edit")]), _vm._v(" "), _c("v-icon", {
-      staticClass: "red--text"
+      staticClass: "red--text text--lighten-1"
     }, [_vm._v("mdi-delete")])], 1), _vm._v(" "), _c("v-divider", {
       staticClass: "mt-5"
     })], 1);
@@ -2215,16 +2215,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _view_auth_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/auth/login */ "./resources/js/view/auth/login.vue");
-/* harmony import */ var _view_auth_register__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/auth/register */ "./resources/js/view/auth/register.vue");
-/* harmony import */ var _view_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../view/Home */ "./resources/js/view/Home.vue");
-/* harmony import */ var _view_layout_FrontLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../view/layout/FrontLayout */ "./resources/js/view/layout/FrontLayout.vue");
-/* harmony import */ var _view_Post_PostShow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view/Post/PostShow */ "./resources/js/view/Post/PostShow.vue");
-/* harmony import */ var _view_Post_MyPosts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view/Post/MyPosts */ "./resources/js/view/Post/MyPosts.vue");
-/* harmony import */ var _view_layout_AdminLayout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../view/layout/AdminLayout */ "./resources/js/view/layout/AdminLayout.vue");
-/* harmony import */ var _view_admin_Dashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../view/admin/Dashboard */ "./resources/js/view/admin/Dashboard.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./resources/js/router/routes.js");
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
+  mode: "history",
+  routes: _routes__WEBPACK_IMPORTED_MODULE_0__["default"]
+}));
+
+/***/ }),
+
+/***/ "./resources/js/router/routes.js":
+/*!***************************************!*\
+  !*** ./resources/js/router/routes.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _view_layout_FrontLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/layout/FrontLayout */ "./resources/js/view/layout/FrontLayout.vue");
+/* harmony import */ var _view_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/Home */ "./resources/js/view/Home.vue");
+/* harmony import */ var _view_Post_PostShow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../view/Post/PostShow */ "./resources/js/view/Post/PostShow.vue");
+/* harmony import */ var _view_Post_MyPosts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../view/Post/MyPosts */ "./resources/js/view/Post/MyPosts.vue");
+/* harmony import */ var _view_layout_AdminLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view/layout/AdminLayout */ "./resources/js/view/layout/AdminLayout.vue");
+/* harmony import */ var _view_admin_Dashboard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view/admin/Dashboard */ "./resources/js/view/admin/Dashboard.vue");
+/* harmony import */ var _view_auth_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../view/auth/login */ "./resources/js/view/auth/login.vue");
+/* harmony import */ var _view_auth_register__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../view/auth/register */ "./resources/js/view/auth/register.vue");
 /* harmony import */ var _components_Error_NotFound__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Error/NotFound */ "./resources/js/components/Error/NotFound.vue");
 /* harmony import */ var _components_Error_AccessDenied__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Error/AccessDenied */ "./resources/js/components/Error/AccessDenied.vue");
 
@@ -2237,57 +2260,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-vue__WEBPACK_IMPORTED_MODULE_10__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_11__["default"]);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_11__["default"]({
-  mode: "history",
-  routes: [{
-    path: '/',
-    component: _view_layout_FrontLayout__WEBPACK_IMPORTED_MODULE_3__["default"],
-    children: [{
-      path: '',
-      component: _view_Home__WEBPACK_IMPORTED_MODULE_2__["default"],
-      name: "home"
-    }, {
-      path: 'post/:slug',
-      component: _view_Post_PostShow__WEBPACK_IMPORTED_MODULE_4__["default"],
-      name: "post-show"
-    }, {
-      path: 'posts/draft',
-      component: _view_Post_MyPosts__WEBPACK_IMPORTED_MODULE_5__["default"],
-      name: "my-posts"
-    }]
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  path: '/',
+  component: _view_layout_FrontLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+  children: [{
+    path: '',
+    component: _view_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
+    name: "home"
   }, {
-    path: '/admin',
-    component: _view_layout_AdminLayout__WEBPACK_IMPORTED_MODULE_6__["default"],
-    children: [{
-      path: 'dashboard',
-      component: _view_admin_Dashboard__WEBPACK_IMPORTED_MODULE_7__["default"],
-      name: 'admin-dashboard'
-    }]
+    path: 'post/:slug',
+    component: _view_Post_PostShow__WEBPACK_IMPORTED_MODULE_2__["default"],
+    name: "post-show"
   }, {
-    path: "/login",
-    component: _view_auth_login__WEBPACK_IMPORTED_MODULE_0__["default"],
-    name: "login"
-  }, {
-    path: "/register",
-    component: _view_auth_register__WEBPACK_IMPORTED_MODULE_1__["default"],
-    name: "register"
-  }, {
-    path: '/404',
-    component: _components_Error_NotFound__WEBPACK_IMPORTED_MODULE_8__["default"],
-    name: "not-found"
-  }, {
-    path: '*',
-    component: _components_Error_NotFound__WEBPACK_IMPORTED_MODULE_8__["default"],
-    name: "not-found"
-  }, {
-    path: '/403',
-    component: _components_Error_AccessDenied__WEBPACK_IMPORTED_MODULE_9__["default"],
-    name: "access-denied"
+    path: 'posts/draft',
+    component: _view_Post_MyPosts__WEBPACK_IMPORTED_MODULE_3__["default"],
+    name: "my-posts"
   }]
-}));
+}, {
+  path: '/admin',
+  component: _view_layout_AdminLayout__WEBPACK_IMPORTED_MODULE_4__["default"],
+  children: [{
+    path: 'dashboard',
+    component: _view_admin_Dashboard__WEBPACK_IMPORTED_MODULE_5__["default"],
+    name: 'admin-dashboard'
+  }]
+}, {
+  path: "/login",
+  component: _view_auth_login__WEBPACK_IMPORTED_MODULE_6__["default"],
+  name: "login"
+}, {
+  path: "/register",
+  component: _view_auth_register__WEBPACK_IMPORTED_MODULE_7__["default"],
+  name: "register"
+}, {
+  path: '/404',
+  component: _components_Error_NotFound__WEBPACK_IMPORTED_MODULE_8__["default"],
+  name: "not-found"
+}, {
+  path: '*',
+  component: _components_Error_NotFound__WEBPACK_IMPORTED_MODULE_8__["default"],
+  redirect: '/404'
+}, {
+  path: '/403',
+  component: _components_Error_AccessDenied__WEBPACK_IMPORTED_MODULE_9__["default"],
+  name: "access-denied"
+}]);
 
 /***/ }),
 

@@ -22,8 +22,8 @@
                             <div class="d-flex flex-row">
                                 <span class="body-2">آخرین ویرایش : 2 دقیقه پیش (3 کلمه)</span>
                                 <v-spacer></v-spacer>
-                                <v-icon class="info--text ml-4">mdi-file-document-edit</v-icon>
-                                <v-icon class="red--text">mdi-delete</v-icon>
+                                <v-icon class="info--text ml-4 text--lighten-1">mdi-file-document-edit</v-icon>
+                                <v-icon class="red--text text--lighten-1">mdi-delete</v-icon>
                             </div>
                             <v-divider class="mt-5"></v-divider>
                         </div>

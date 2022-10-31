@@ -8,6 +8,9 @@
 //vuetify
 @import '~vuetify/dist/vuetify.min.css';
 
+a{
+    text-decoration: none !important;
+}
 .v-application {
     font-family: Estedad, sans-serif  !important;
     letter-spacing: 0 !important;
