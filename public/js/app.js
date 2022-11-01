@@ -2616,6 +2616,19 @@ __webpack_require__.r(__webpack_exports__);
   name: "register",
   components: {
     AuthBanner: _components_auth_AuthBanner__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      form: {
+        email: null,
+        password: null
+      }
+    };
+  },
+  methods: {
+    register: function register() {
+      axios.post('/register', this.form);
+    }
   }
 });
 
@@ -4135,12 +4148,27 @@ var render = function render() {
       label: "آدرس ایمیل",
       outlined: "",
       rounded: ""
+    },
+    model: {
+      value: _vm.form.email,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "email", $$v);
+      },
+      expression: "form.email"
     }
   }), _vm._v(" "), _c("v-text-field", {
     attrs: {
       label: "رمز عبور",
       outlined: "",
-      rounded: ""
+      rounded: "",
+      type: "password"
+    },
+    model: {
+      value: _vm.form.password,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "password", $$v);
+      },
+      expression: "form.password"
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "d-flex"
@@ -4148,6 +4176,9 @@ var render = function render() {
     staticClass: "info px-7",
     attrs: {
       rounded: ""
+    },
+    on: {
+      click: _vm.register
     }
   }, [_vm._v("ایجاد حساب کاربری "), _c("v-icon", {
     staticClass: "mr-2"

@@ -7,6 +7,7 @@
         <title>virgool blog</title>
     </head>
     <body >
+    {{auth('sanctum')->user()}}
     <div id="app">
         <v-app>
             <router-view></router-view>

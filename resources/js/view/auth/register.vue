@@ -8,16 +8,20 @@
                     <v-text-field label="آدرس ایمیل"
                                   outlined
                                   rounded
+                                  v-model="form.email"
                                   class="mt-9"
                     ></v-text-field>
                     <v-text-field label="رمز عبور"
                                   outlined
                                   rounded
+                                  v-model="form.password"
+                                  type="password"
                     ></v-text-field>
                     <div class="d-flex">
                         <v-spacer></v-spacer>
                         <v-btn class="info px-7"
                                rounded
+                               @click="register"
                         >ایجاد حساب کاربری <v-icon class="mr-2">mdi-chevron-left</v-icon> </v-btn>
                     </div>
                     <div class="d-flex flex-column align-center justify-center mt-9 body-2">
@@ -36,7 +40,20 @@ import AuthBanner from "@/components/auth/AuthBanner";
 
 export default {
     name: "register",
-    components: {AuthBanner}
+    components: {AuthBanner},
+    data(){
+        return{
+            form : {
+                email: null ,
+                password: null
+            }
+        }
+    },
+    methods:{
+        register(){
+            axios.post('/register',this.form)
+        }
+    }
 }
 </script>
 
