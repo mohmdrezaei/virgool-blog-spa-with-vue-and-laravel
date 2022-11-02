@@ -2622,12 +2622,39 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         email: null,
         password: null
-      }
+      },
+      errors: {
+        email: null,
+        password: null
+      },
+      emailRules: [function (value) {
+        return !!value || 'ایمیل الزامی است';
+      }, function (value) {
+        return /.+@+./.test(value) || 'یک ایمبل درست را وارد کنید';
+      }, function (value) {
+        return (value ? value.length <= 255 : false) || 'طول ایمیل نباید بیشتر از 255 کاراکتر باشد';
+      }],
+      passwordRules: [function (value) {
+        return !!value || 'رمز عبور الزامی است';
+      }, function (value) {
+        return (value ? value.length >= 8 : false) || 'طول رمز عبور باید بیشتر از 8 کاراکتر باشد';
+      }],
+      loading: false
     };
   },
   methods: {
     register: function register() {
-      axios.post('/register', this.form);
+      var _this = this;
+
+      if (this.$refs.form.validate()) {
+        this.loading = true;
+        axios.post('/register', this.form)["catch"](function (error) {
+          _this.errors.email = error.response.data.errors.email[0];
+          _this.errors.password = error.response.data.errors.password[0];
+        })["finally"](function () {
+          return _this.loading = false;
+        });
+      }
     }
   }
 });
@@ -4138,7 +4165,8 @@ var render = function render() {
       cols: "12",
       md: "4"
     }
-  }, [_c("div", {
+  }, [_c("v-form", {
+    ref: "form",
     staticClass: "w-100 mx-5"
   }, [_c("span", {
     staticClass: "blue--text font-weight-bold"
@@ -4147,7 +4175,9 @@ var render = function render() {
     attrs: {
       label: "آدرس ایمیل",
       outlined: "",
-      rounded: ""
+      rounded: "",
+      rules: _vm.emailRules,
+      "error-messages": _vm.errors.email
     },
     model: {
       value: _vm.form.email,
@@ -4161,6 +4191,8 @@ var render = function render() {
       label: "رمز عبور",
       outlined: "",
       rounded: "",
+      rules: _vm.passwordRules,
+      "error-messages": _vm.errors.password,
       type: "password"
     },
     model: {
@@ -4180,9 +4212,14 @@ var render = function render() {
     on: {
       click: _vm.register
     }
-  }, [_vm._v("ایجاد حساب کاربری "), _c("v-icon", {
+  }, [_vm.loading ? [_c("v-progress-circular", {
+    attrs: {
+      color: "white",
+      indeterminate: true
+    }
+  })] : [_vm._v("\n                            ایجاد حساب کاربری "), _c("v-icon", {
     staticClass: "mr-2"
-  }, [_vm._v("mdi-chevron-left")])], 1)], 1), _vm._v(" "), _c("div", {
+  }, [_vm._v("mdi-chevron-left")])]], 2)], 1), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column align-center justify-center mt-9 body-2"
   }, [_c("span", {
     staticClass: "mt-6"
@@ -4195,7 +4232,7 @@ var render = function render() {
         name: "login"
       }
     }
-  }, [_vm._v("قبلا عضو شده اید؟ رفتن به صفحه ورود")])], 1)], 1)])], 1)], 1);
+  }, [_vm._v("قبلا عضو شده اید؟ رفتن به صفحه ورود")])], 1)], 1)], 1)], 1)], 1);
 };
 
 var staticRenderFns = [];
